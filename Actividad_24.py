@@ -9,10 +9,12 @@ def sum_nat(n):
     else:
         return n+sum_nat(n-1)
 def fibonacci(n):
-    if n<0:
+    if n==1 or n==0:
         return 0
-
-
+    elif n==2:
+        return 1
+    else:
+        return fibonacci(n-1)+fibonacci(n-2)
 
 while True:
     print("--MENÚ--")
@@ -35,7 +37,9 @@ while True:
             n=int(input("Ingrese el numero que desea:"))
             print(sum_nat(n))
         case "3":
-            print()
+            print("\n--FIBONACCI--")
+            n=int(input("Ingrese el numero de posicion que desea encontrar: "))
+            print(fibonacci(n))
         case "4":
             print()
         case "5":
