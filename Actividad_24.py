@@ -26,6 +26,12 @@ def contar_letra(palabra, letra):
         else:
             return contar_letra(palabra[1:], letra)
 
+def invertir_texto(texto):
+    if texto=="":
+        return ""
+    else:
+        return texto[-1]+invertir_texto(texto[:-1])
+    
 while True:
     print("\n--MENÚ--")
     print("1.Calcular factorial")
@@ -56,7 +62,9 @@ while True:
             letra=input("Ingrese la letra que desea buscar en la palabra: ").lower()
             print(f"La letra '{letra}' aparece {contar_letra(palabra, letra)} veces")
         case "5":
-            print()
+            print("\n--INVERTIR TEXTO--")
+            texto=input("Ingrese el texto que desea invertir: ")
+            print(invertir_texto(texto))
         case "6":
             print()
         case "7":
