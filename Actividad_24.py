@@ -15,9 +15,19 @@ def fibonacci(n):
         return 1
     else:
         return fibonacci(n-1)+fibonacci(n-2)
+    
+    
+def contar_letra(palabra, letra):
+    if palabra=="" or letra=="":
+        return 0
+    else:
+        if palabra[0]==letra:
+            return 1+contar_letra(palabra[1:], letra)
+        else:
+            return contar_letra(palabra[1:], letra)
 
 while True:
-    print("--MENÚ--")
+    print("\n--MENÚ--")
     print("1.Calcular factorial")
     print("2.Suma de primeros N números naturales")
     print("3.Calcular el n-ésimo numero de Fibonacci")
@@ -41,7 +51,10 @@ while True:
             n=int(input("Ingrese el numero de posicion que desea encontrar: "))
             print(fibonacci(n))
         case "4":
-            print()
+            print("\n--CONTADOR DE LETRAS--")
+            palabra=input("Ingrese la palabra que desea:").lower()
+            letra=input("Ingrese la letra que desea buscar en la palabra: ").lower()
+            print(f"La letra '{letra}' aparece {contar_letra(palabra, letra)} veces")
         case "5":
             print()
         case "6":
