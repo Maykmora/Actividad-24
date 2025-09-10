@@ -31,6 +31,12 @@ def invertir_texto(texto):
         return ""
     else:
         return texto[-1]+invertir_texto(texto[:-1])
+
+def calcular_potencia(n, exp):
+    if exp==0:
+        return 1
+    else:
+        return n*calcular_potencia(n, exp-1)
     
 while True:
     print("\n--MENÚ--")
@@ -66,7 +72,10 @@ while True:
             texto=input("Ingrese el texto que desea invertir: ")
             print(invertir_texto(texto))
         case "6":
-            print()
+            print("\n--CALCULADORA DE POTENCIAS--")
+            n=int(input("Ingrese el numero base: "))
+            exp=int(input("Ingrese el exponte al que desea elevar: "))
+            print(f"'{n}' elevado a '{exp}´ es: {calcular_potencia(n, exp)}")
         case "7":
             print("Gracias por usar el programa.")
             break
